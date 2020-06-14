@@ -1,20 +1,17 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    mode: 'development',
     entry: {
         app: './src/index.js',
-        print: './src/print.js',
     },
-    devtool: 'inline-source-map',
     plugins: [
+        // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
         new CleanWebpackPlugin({
             cleanStaleWebpackAssets: false
         }),
         new HtmlWebpackPlugin({
-            title: 'Output Management',
+            title: 'Production',
         }),
     ],
     output: {
@@ -39,4 +36,3 @@ module.exports = {
         ],
     },
 };
-

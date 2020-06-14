@@ -2,6 +2,9 @@ import _ from 'lodash'
 import './style.css';
 import Icon from './monkey.svg';
 import printMe from './print.js';
+if (process.env.NODE_ENV !== 'production') {
+    console.log('Looks like we are in development mode!');
+}
 
 function component() {
     const element = document.createElement('div');
